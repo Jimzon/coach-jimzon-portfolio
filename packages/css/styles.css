@@ -294,7 +294,7 @@ img {
 }
 
 .home__social-icon {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--first-color);
 }
 
@@ -357,6 +357,9 @@ img {
 
 .home__scroll-arrow {
   font-size: 1.25rem;
+}
+.sidebar_logo {
+  width: 2rem;
 }
 /*==================== BUTTONS ====================*/
 
