@@ -59,7 +59,7 @@
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
-    --big-font-size: 3rem;
+    --big-font-size: 2.2rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -308,7 +308,7 @@ img {
 }
 
 .home__blob-img {
-  width: 180px;
+  width: 200px;
 }
 
 .home__data {
@@ -317,6 +317,7 @@ img {
 
 .home__title {
   font-size: var(--big-font-size);
+  line-height: 3rem;
 }
 
 .home__subtitle {
@@ -363,7 +364,9 @@ img {
   display: inline-block;
   background-color: var(--first-color);
   color: #ffff;
-  padding: 1rem;
+  padding: 0.8rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
 }
@@ -419,6 +422,7 @@ img {
 .about__description {
   text-align: center;
   margin-bottom: var(--mb-2-5);
+  padding-top: 2rem;
 }
 
 .about__info {
