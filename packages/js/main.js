@@ -105,9 +105,6 @@ let swiperPortfolio = new Swiper(".portfolio__container", {
     el: ".swiper-pagination",
     clickable: true,
   },
-
-  /* mousewheel: true,
-  keyboard: true, */
 });
 
 /*==================== TESTIMONIAL ====================*/
@@ -127,9 +124,6 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
       slidesPerView: 2,
     },
   },
-
-  /* mousewheel: true,
-  keyboard: true, */
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
@@ -177,29 +171,30 @@ window.addEventListener("scroll", scrollUp);
 /*==================== DARK LIGHT THEME ====================*/
 
 const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
+const darkTheme = "dark-theme";
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
+// Function to set the dark theme on page load
+function setDarkThemeOnLoad() {
+  // Check if the user has already selected a theme
+  const savedTheme = localStorage.getItem("selected-theme");
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme
-  );
+  // If no theme is saved, default to dark theme
+  if (!savedTheme || savedTheme === "dark") {
+    document.body.classList.add(darkTheme);
+    themeButton.classList.add(iconTheme);
+    localStorage.setItem("selected-theme", "dark");
+    localStorage.setItem("selected-icon", "uil-moon");
+  }
+  // If the user has selected a light theme, apply the light theme
+  else {
+    document.body.classList.remove(darkTheme);
+    themeButton.classList.remove(iconTheme);
+  }
 }
+
+// Call the function to set the dark theme on page load
+setDarkThemeOnLoad();
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {

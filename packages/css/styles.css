@@ -178,7 +178,8 @@ img {
 .header {
   width: 100%;
   position: fixed;
-  bottom: 0;
+  padding: 20px 0;
+  top: 0;
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
@@ -223,6 +224,9 @@ img {
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: 0.3s;
+  }
+  .home__container {
+    padding-top: 20px;
   }
 }
 
@@ -303,7 +307,7 @@ img {
 }
 
 .home__blob {
-  width: 200px;
+  width: 240px;
   fill: var(--first-color);
 }
 
